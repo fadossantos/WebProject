@@ -18,7 +18,7 @@ public class Inspecao implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idInspecao;
+	private long idInspecao;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dtSolicitacaoInspecao;
@@ -94,12 +94,12 @@ public class Inspecao implements Serializable {
 	private Segurado segurado;
 
 	//bi-directional many-to-many association to Atividade
-	@ManyToMany(mappedBy="inspecaos1")
-	private List<Atividade> atividades1;
+	@ManyToMany(mappedBy="inspecao_Atividade_Informada")
+	private List<Atividade> inspecao_Atividade_Informada;
 
 	//bi-directional many-to-many association to Atividade
-	@ManyToMany(mappedBy="inspecaos2")
-	private List<Atividade> atividades2;
+	@ManyToMany(mappedBy="inspecao_Atividade_Apurada")
+	private List<Atividade> inspecao_Atividade_Apurada;
 
 	//bi-directional many-to-one association to Inspecao_Cobertura
 	@OneToMany(mappedBy="inspecao")
@@ -120,11 +120,11 @@ public class Inspecao implements Serializable {
 	public Inspecao() {
 	}
 
-	public int getIdInspecao() {
+	public long getIdInspecao() {
 		return this.idInspecao;
 	}
 
-	public void setIdInspecao(int idInspecao) {
+	public void setIdInspecao(long idInspecao) {
 		this.idInspecao = idInspecao;
 	}
 
@@ -361,20 +361,20 @@ public class Inspecao implements Serializable {
 		this.segurado = segurado;
 	}
 
-	public List<Atividade> getAtividades1() {
-		return this.atividades1;
+	public List<Atividade> getInspecao_Atividade_Apurada() {
+		return this.inspecao_Atividade_Apurada;
 	}
 
-	public void setAtividades1(List<Atividade> atividades1) {
-		this.atividades1 = atividades1;
+	public void setInspecao_Atividade_Apurada(List<Atividade> inspecao_Atividade_Apurada) {
+		this.inspecao_Atividade_Apurada = inspecao_Atividade_Apurada;
 	}
 
-	public List<Atividade> getAtividades2() {
-		return this.atividades2;
+	public List<Atividade> getInspecao_Atividade_Informada() {
+		return this.inspecao_Atividade_Informada;
 	}
 
-	public void setAtividades2(List<Atividade> atividades2) {
-		this.atividades2 = atividades2;
+	public void setInspecao_Atividade_Informada(List<Atividade> inspecao_Atividade_Informada) {
+		this.inspecao_Atividade_Informada = inspecao_Atividade_Informada;
 	}
 
 	public List<Inspecao_Cobertura> getInspecaoCoberturas() {

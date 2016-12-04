@@ -1,6 +1,8 @@
 package br.com.tmsfasdom.model;
 
 import java.io.Serializable;
+import java.util.List;
+
 import javax.persistence.*;
 
 
@@ -26,30 +28,30 @@ public class NaoConformidade implements Serializable {
 	private Gravidade gravidade;
 
 	//bi-directional many-to-many association to Relatorio
-//	@ManyToMany
-//	@JoinTable(
-//		name="Relatorio_NaoConformidade"
-//		, joinColumns={
-//			@JoinColumn(name="idNaoConformidade")
-//			}
-//		, inverseJoinColumns={
-//			@JoinColumn(name="idRelatorio")
-//			}
-//		)
-//	private List<Relatorio> relatorios;
+	@ManyToMany
+	@JoinTable(
+		name="Relatorio_NaoConformidade"
+		, joinColumns={
+			@JoinColumn(name="idNaoConformidade")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="idRelatorio")
+			}
+		)
+	private List<Relatorio> relatorios;
 
 	//bi-directional many-to-many association to Revisao
-//	@ManyToMany
-//	@JoinTable(
-//		name="Revisao_NaoConformidade"
-//		, joinColumns={
-//			@JoinColumn(name="idNaoConformidade")
-//			}
-//		, inverseJoinColumns={
-//			@JoinColumn(name="idRevisao")
-//			}
-//		)
-//	private List<Revisao> revisaos;
+	@ManyToMany
+	@JoinTable(
+		name="Revisao_NaoConformidade"
+		, joinColumns={
+			@JoinColumn(name="idNaoConformidade")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="idRevisao")
+			}
+		)
+	private List<Revisao> revisaos;
 
 	public NaoConformidade() {
 	}

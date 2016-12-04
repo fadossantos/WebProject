@@ -15,7 +15,7 @@ public class Inspecao_Cobertura implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idInspecaoCobertura;
+	private long idInspecaoCobertura;
 
 	private double franquia;
 
@@ -85,6 +85,14 @@ public class Inspecao_Cobertura implements Serializable {
 
 	public void setInspecao(Inspecao inspecao) {
 		this.inspecao = inspecao;
+	}
+
+	public long getIdInspecaoCobertura() {
+		return idInspecaoCobertura;
+	}
+
+	public void setIdInspecaoCobertura(long idInspecaoCobertura) {
+		this.idInspecaoCobertura = idInspecaoCobertura;
 	}
 
 }

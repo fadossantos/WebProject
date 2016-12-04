@@ -16,7 +16,7 @@ public class InsercaoSistema implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idInsercaoSistema;
+	private long idInsercaoSistema;
 
 	private byte aprovacaoSemRessalvas;
 
@@ -44,11 +44,11 @@ public class InsercaoSistema implements Serializable {
 	public InsercaoSistema() {
 	}
 
-	public int getIdInsercaoSistema() {
+	public long getIdInsercaoSistema() {
 		return this.idInsercaoSistema;
 	}
 
-	public void setIdInsercaoSistema(int idInsercaoSistema) {
+	public void setIdInsercaoSistema(long idInsercaoSistema) {
 		this.idInsercaoSistema = idInsercaoSistema;
 	}
 
