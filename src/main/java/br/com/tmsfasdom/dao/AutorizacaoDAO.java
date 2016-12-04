@@ -4,7 +4,6 @@ import javax.transaction.Transactional;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.tmsfasdom.model.Agendamento;
 import br.com.tmsfasdom.model.Autorizacao;
 
 @Transactional

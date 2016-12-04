@@ -18,9 +18,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.com.tmsfasdom.config.HeaderHttpInterceptor;
-import br.com.tmsfasdom.model.Cidade;
 import br.com.tmsfasdom.model.Estado;
-import br.com.tmsfasdom.model.UserRequest;
 
 @Controller
 @RequestMapping(value = "/data")

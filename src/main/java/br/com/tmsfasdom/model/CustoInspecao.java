@@ -15,7 +15,7 @@ public class CustoInspecao implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idCustoInspecao;
+	private long idCustoInspecao;
 
 	private double custoAprovado;
 
@@ -31,11 +31,11 @@ public class CustoInspecao implements Serializable {
 	public CustoInspecao() {
 	}
 
-	public int getIdCustoInspecao() {
+	public long getIdCustoInspecao() {
 		return this.idCustoInspecao;
 	}
 
-	public void setIdCustoInspecao(int idCustoInspecao) {
+	public void setIdCustoInspecao(long idCustoInspecao) {
 		this.idCustoInspecao = idCustoInspecao;
 	}
 

@@ -5,17 +5,12 @@ import org.springframework.security.authentication.AccountStatusUserDetailsCheck
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.tmsfasdom.dao.FuncionarioDAO;
 import br.com.tmsfasdom.dao.UserDAO;
-import br.com.tmsfasdom.model.Funcionario;
 import br.com.tmsfasdom.model.Usuario;
 
 @Service
 public class UserDetailsService implements org.springframework.security.core.userdetails.UserDetailsService {
 
-	@Autowired
-	private FuncionarioDAO funcionarioRepo;
-	
 	@Autowired
 	private UserDAO usuarioRepo;
 	

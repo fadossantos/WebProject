@@ -10,61 +10,58 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.tmsfasdom.dao.EstadoDAO;
-import br.com.tmsfasdom.model.Estado;
+import br.com.tmsfasdom.dao.DesignacaoDAO;
+import br.com.tmsfasdom.model.Designacao;
 
 @RestController
-@RequestMapping(value = "/api/estado")
+@RequestMapping(value = "/api/designacao")
 public class ApiDesignacaoController {
 
 	@Autowired
-	EstadoDAO estadoDAO;
+	DesignacaoDAO designacaoDAO;
 
 	@RequestMapping(value = "/salvar", method = { RequestMethod.POST, RequestMethod.PUT }, produces = {
 			MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<?> criar(@RequestBody Estado estado) {
-		Estado estadoSalvo = null;
+	public ResponseEntity<?> criar(@RequestBody Designacao designacao) {
+		Designacao designacaoSalvo = null;
 		try {
 
-			estadoSalvo = estadoDAO.findBySiglaEstado(estado.getSiglaEstado());
-			if (estadoSalvo == null) {
-				estadoSalvo = estadoDAO.save(estado);
+			designacaoSalvo = designacaoDAO.findOne(designacao.getIdDesignacao());
+			if (designacaoSalvo == null) {
+				designacaoSalvo = designacaoDAO.save(designacao);
 			} else {
-				estadoSalvo.setNomeEstado(estado.getNomeEstado());
-				estadoSalvo.setSiglaEstado(estado.getSiglaEstado());
-				estadoSalvo = estadoDAO.save(estadoSalvo);
+				designacaoSalvo.setDataDesignacao(designacao.getDataDesignacao());
+				designacaoSalvo.setDataDivulgacao(designacao.getDataDivulgacao());
+				designacaoSalvo.setFuncionario(designacao.getFuncionario());
+				designacaoSalvo.setInspecao(designacao.getInspecao());
+				designacaoSalvo = designacaoDAO.save(designacaoSalvo);
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<Object>(estadoSalvo, HttpStatus.OK);
+		return new ResponseEntity<Object>(designacaoSalvo, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/deletar/{id}", method = RequestMethod.DELETE, produces = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> delete(@PathVariable("id") long id) {
-		estadoDAO.delete(id);
+		designacaoDAO.delete(id);
 		return new ResponseEntity<Object>("Deletado com sucesso", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/buscar/{id}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> getById(@PathVariable("id") long id) {
-		return new ResponseEntity<Object>(estadoDAO.findOne(id), HttpStatus.OK);
+		return new ResponseEntity<Object>(designacaoDAO.findOne(id), HttpStatus.OK);
 	}
 
-	@RequestMapping(value = "/buscarpornome/{nome}", method = RequestMethod.GET, produces = {
-			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
-	public ResponseEntity<?> getBySigla(@PathVariable("nome") String nome) {
-		return new ResponseEntity<Object>(estadoDAO.findBySiglaEstado(nome), HttpStatus.OK);
-	}
-
+	
 	@RequestMapping(value = "/obtertodos", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> getAll() {
 
-		return new ResponseEntity<Object>(estadoDAO.findAll(), HttpStatus.OK);
+		return new ResponseEntity<Object>(designacaoDAO.findAll(), HttpStatus.OK);
 	}
 
 }
