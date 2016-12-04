@@ -5686,7 +5686,7 @@ VALUES
 0,
 0,
 0,
-'fer14911',
+'22471279830',
 '22471279830',
 '22471279830');
 
@@ -5706,7 +5706,39 @@ VALUES
 (1,
 2);
 
+insert into  inspecao_seguros.atividade(atividade.desc_atividade)
+values('atividade1');
 
+insert into inspecao_seguros.status(status.desc_status)
+values('status1');
 
+insert into inspecao_seguros.ramos(ramos.desc_ramos)
+values('ramo1');
 
+insert into inspecao_seguros.gravidade(gravidade.desc_gravidade, gravidade.peso)
+values('gravidade1', 3);
+
+insert into inspecao_seguros.nao_conformidades(nao_conformidades.desc_nao_conformidade, nao_conformidades.id_gravidade)
+values('naoconformidade1', 1);
+
+insert into inspecao_seguros.tipo_inspecao(tipo_inspecao.desc_tipo_inspecao)
+values('tipoinspecao1');
+
+insert into inspecao_seguros.cobertura(cobertura.desc_cobertura)
+values('cobertura1');
+
+insert into inspecao_seguros.cliente(cliente.nome_cliente, cliente.prazo_cliente)
+values('cliente01', 10);
+
+insert into inspecao_seguros.cliente_ramos(cliente_ramos.id_cliente, cliente_ramos.id_ramos)
+values(1,1);
+
+insert into inspecao_seguros.cliente_tipo_inspecao(cliente_tipo_inspecao.id_cliente, cliente_tipo_inspecao.id_tipo_inspecao)
+values(1,1);
+
+insert into inspecao_seguros.segurado(segurado.cpf_cnpj, segurado.nome_segurado)
+values(31744983844, 'segurado01');
+
+insert into inspecao_seguros.inspecao(inspecao.dt_solicitacao_inspecao, inspecao.id_cliente, inspecao.id_endereco, inspecao.id_ramo, inspecao.id_segurado, inspecao.id_status, inspecao.id_tipo_inspecao, inspecao.nome_contato, inspecao.nome_corretor, inspecao.num_inspecao_cliente, inspecao.num_proposta_cliente, inspecao.observacao, inspecao.qtd_blocos, inspecao.roubo, inspecao.telefone_contato, inspecao.telefone_corretor, inspecao.valor_total_risco)
+values('2016-11-30', 1, 1, 1, 1, 1, 1, 'nomecontato', 'nomecorretor', 10, 10, 'observacao', 10, 1, '32223223', '33443334', 100);
 
