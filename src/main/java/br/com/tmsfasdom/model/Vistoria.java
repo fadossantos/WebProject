@@ -16,7 +16,7 @@ public class Vistoria implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idVistoria;
+	private long idVistoria;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataHoraChegadaLocal;
@@ -40,11 +40,11 @@ public class Vistoria implements Serializable {
 	public Vistoria() {
 	}
 
-	public int getIdVistoria() {
+	public long getIdVistoria() {
 		return this.idVistoria;
 	}
 
-	public void setIdVistoria(int idVistoria) {
+	public void setIdVistoria(long idVistoria) {
 		this.idVistoria = idVistoria;
 	}
 

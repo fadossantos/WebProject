@@ -15,7 +15,7 @@ public class Escritorio implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idEscritorio;
+	private long idEscritorio;
 
 	private String descEscritorio;
 
@@ -31,11 +31,11 @@ public class Escritorio implements Serializable {
 	public Escritorio() {
 	}
 
-	public int getIdEscritorio() {
+	public long getIdEscritorio() {
 		return this.idEscritorio;
 	}
 
-	public void setIdEscritorio(int idEscritorio) {
+	public void setIdEscritorio(long idEscritorio) {
 		this.idEscritorio = idEscritorio;
 	}
 

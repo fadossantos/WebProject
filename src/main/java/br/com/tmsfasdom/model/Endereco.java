@@ -15,7 +15,7 @@ public class Endereco implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idEndereco;
+	private long idEndereco;
 
 	private String bairro;
 
@@ -57,11 +57,11 @@ public class Endereco implements Serializable {
 	public Endereco() {
 	}
 
-	public int getIdEndereco() {
+	public long getIdEndereco() {
 		return this.idEndereco;
 	}
 
-	public void setIdEndereco(int idEndereco) {
+	public void setIdEndereco(long idEndereco) {
 		this.idEndereco = idEndereco;
 	}
 

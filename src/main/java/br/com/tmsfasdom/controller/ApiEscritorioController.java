@@ -10,61 +10,61 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.tmsfasdom.dao.EstadoDAO;
-import br.com.tmsfasdom.model.Estado;
+import br.com.tmsfasdom.dao.EscritorioDAO;
+import br.com.tmsfasdom.model.Escritorio;
 
 @RestController
-@RequestMapping(value = "/api/estado")
+@RequestMapping(value = "/api/escritorio")
 public class ApiEscritorioController {
 
 	@Autowired
-	EstadoDAO estadoDAO;
+	EscritorioDAO escritorioDAO;
 
 	@RequestMapping(value = "/salvar", method = { RequestMethod.POST, RequestMethod.PUT }, produces = {
 			MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE }, consumes = { MediaType.APPLICATION_JSON_VALUE })
-	public ResponseEntity<?> criar(@RequestBody Estado estado) {
-		Estado estadoSalvo = null;
+	public ResponseEntity<?> criar(@RequestBody Escritorio escritorio) {
+		Escritorio escritorioSalvo = null;
 		try {
 
-			estadoSalvo = estadoDAO.findBySiglaEstado(estado.getSiglaEstado());
-			if (estadoSalvo == null) {
-				estadoSalvo = estadoDAO.save(estado);
+			escritorioSalvo = escritorioDAO.findByDescEscritorio(escritorio.getDescEscritorio());
+			if (escritorioSalvo == null) {
+				escritorioSalvo = escritorioDAO.save(escritorio);
 			} else {
-				estadoSalvo.setNomeEstado(estado.getNomeEstado());
-				estadoSalvo.setSiglaEstado(estado.getSiglaEstado());
-				estadoSalvo = estadoDAO.save(estadoSalvo);
+				escritorioSalvo.setDescEscritorio(escritorio.getDescEscritorio());
+				escritorioSalvo.setEndereco(escritorio.getEndereco());
+				escritorioSalvo = escritorioDAO.save(escritorioSalvo);
 			}
 		} catch (Exception e) {
 			return new ResponseEntity<Object>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<Object>(estadoSalvo, HttpStatus.OK);
+		return new ResponseEntity<Object>(escritorioSalvo, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/deletar/{id}", method = RequestMethod.DELETE, produces = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> delete(@PathVariable("id") long id) {
-		estadoDAO.delete(id);
+		escritorioDAO.delete(id);
 		return new ResponseEntity<Object>("Deletado com sucesso", HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/buscar/{id}", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> getById(@PathVariable("id") long id) {
-		return new ResponseEntity<Object>(estadoDAO.findOne(id), HttpStatus.OK);
+		return new ResponseEntity<Object>(escritorioDAO.findOne(id), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/buscarpornome/{nome}", method = RequestMethod.GET, produces = {
 			MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> getBySigla(@PathVariable("nome") String nome) {
-		return new ResponseEntity<Object>(estadoDAO.findBySiglaEstado(nome), HttpStatus.OK);
+		return new ResponseEntity<Object>(escritorioDAO.findByDescEscritorio(nome), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/obtertodos", method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE,
 			MediaType.APPLICATION_XML_VALUE })
 	public ResponseEntity<?> getAll() {
 
-		return new ResponseEntity<Object>(estadoDAO.findAll(), HttpStatus.OK);
+		return new ResponseEntity<Object>(escritorioDAO.findAll(), HttpStatus.OK);
 	}
 
 }

@@ -18,7 +18,7 @@ public class TipoInspecao implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int idTipoInspecao;
 
-	private String descTipoInspeca;
+	private String descTipoInspecao;
 
 	//bi-directional many-to-many association to Cliente
 	@ManyToMany(mappedBy="tipoInspecaos")
@@ -39,12 +39,12 @@ public class TipoInspecao implements Serializable {
 		this.idTipoInspecao = idTipoInspecao;
 	}
 
-	public String getDescTipoInspeca() {
-		return this.descTipoInspeca;
+	public String getDescTipoInspecao() {
+		return this.descTipoInspecao;
 	}
 
-	public void setDescTipoInspeca(String descTipoInspeca) {
-		this.descTipoInspeca = descTipoInspeca;
+	public void setDescTipoInspecao(String descTipoInspecao) {
+		this.descTipoInspecao = descTipoInspecao;
 	}
 
 	public List<Cliente> getClientes() {

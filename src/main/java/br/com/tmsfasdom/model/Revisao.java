@@ -17,7 +17,7 @@ public class Revisao implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idRevisao;
+	private long idRevisao;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataRevisao;
@@ -39,11 +39,11 @@ public class Revisao implements Serializable {
 	public Revisao() {
 	}
 
-	public int getIdRevisao() {
+	public long getIdRevisao() {
 		return this.idRevisao;
 	}
 
-	public void setIdRevisao(int idRevisao) {
+	public void setIdRevisao(long idRevisao) {
 		this.idRevisao = idRevisao;
 	}
 

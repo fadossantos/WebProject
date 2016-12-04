@@ -2,7 +2,6 @@ package br.com.tmsfasdom.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.List;
 
 
 /**
@@ -27,30 +26,30 @@ public class NaoConformidade implements Serializable {
 	private Gravidade gravidade;
 
 	//bi-directional many-to-many association to Relatorio
-	@ManyToMany
-	@JoinTable(
-		name="Relatorio_NaoConformidade"
-		, joinColumns={
-			@JoinColumn(name="idNaoConformidade")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="idRelatorio")
-			}
-		)
-	private List<Relatorio> relatorios;
+//	@ManyToMany
+//	@JoinTable(
+//		name="Relatorio_NaoConformidade"
+//		, joinColumns={
+//			@JoinColumn(name="idNaoConformidade")
+//			}
+//		, inverseJoinColumns={
+//			@JoinColumn(name="idRelatorio")
+//			}
+//		)
+//	private List<Relatorio> relatorios;
 
 	//bi-directional many-to-many association to Revisao
-	@ManyToMany
-	@JoinTable(
-		name="Revisao_NaoConformidade"
-		, joinColumns={
-			@JoinColumn(name="idNaoConformidade")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="idRevisao")
-			}
-		)
-	private List<Revisao> revisaos;
+//	@ManyToMany
+//	@JoinTable(
+//		name="Revisao_NaoConformidade"
+//		, joinColumns={
+//			@JoinColumn(name="idNaoConformidade")
+//			}
+//		, inverseJoinColumns={
+//			@JoinColumn(name="idRevisao")
+//			}
+//		)
+//	private List<Revisao> revisaos;
 
 	public NaoConformidade() {
 	}
@@ -79,20 +78,20 @@ public class NaoConformidade implements Serializable {
 		this.gravidade = gravidade;
 	}
 
-	public List<Relatorio> getRelatorios() {
-		return this.relatorios;
-	}
+//	public List<Relatorio> getRelatorios() {
+//		return this.relatorios;
+//	}
 
-	public void setRelatorios(List<Relatorio> relatorios) {
-		this.relatorios = relatorios;
-	}
+//	public void setRelatorios(List<Relatorio> relatorios) {
+//		this.relatorios = relatorios;
+//	}
 
-	public List<Revisao> getRevisaos() {
-		return this.revisaos;
-	}
+//	public List<Revisao> getRevisaos() {
+//		return this.revisaos;
+//	}
 
-	public void setRevisaos(List<Revisao> revisaos) {
-		this.revisaos = revisaos;
-	}
+//	public void setRevisaos(List<Revisao> revisaos) {
+//		this.revisaos = revisaos;
+//	}
 
 }

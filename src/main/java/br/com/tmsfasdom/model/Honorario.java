@@ -15,7 +15,7 @@ public class Honorario implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idHonorario;
+	private long idHonorario;
 
 	private String cpfAlterador;
 
@@ -35,11 +35,11 @@ public class Honorario implements Serializable {
 	public Honorario() {
 	}
 
-	public int getIdHonorario() {
+	public long getIdHonorario() {
 		return this.idHonorario;
 	}
 
-	public void setIdHonorario(int idHonorario) {
+	public void setIdHonorario(long idHonorario) {
 		this.idHonorario = idHonorario;
 	}
 

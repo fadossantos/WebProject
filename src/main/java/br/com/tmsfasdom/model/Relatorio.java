@@ -17,7 +17,7 @@ public class Relatorio implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idRelatorio;
+	private long idRelatorio;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataRelatorio;
@@ -39,11 +39,11 @@ public class Relatorio implements Serializable {
 	public Relatorio() {
 	}
 
-	public int getIdRelatorio() {
+	public long getIdRelatorio() {
 		return this.idRelatorio;
 	}
 
-	public void setIdRelatorio(int idRelatorio) {
+	public void setIdRelatorio(long idRelatorio) {
 		this.idRelatorio = idRelatorio;
 	}
 
