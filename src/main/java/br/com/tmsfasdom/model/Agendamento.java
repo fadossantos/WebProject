@@ -17,7 +17,7 @@ public class Agendamento implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idAgendamento;
+	private long idAgendamento;
 
 	private byte confirmacao;
 
@@ -40,7 +40,7 @@ public class Agendamento implements Serializable {
 	public Agendamento() {
 	}
 
-	public int getIdAgendamento() {
+	public long getIdAgendamento() {
 		return this.idAgendamento;
 	}
 

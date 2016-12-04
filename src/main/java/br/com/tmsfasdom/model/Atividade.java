@@ -21,30 +21,30 @@ public class Atividade implements Serializable {
 	private String descAtividade;
 
 	//bi-directional many-to-many association to Inspecao
-	@ManyToMany
-	@JoinTable(
-		name="Inspecao_Atividade_Apurada"
-		, joinColumns={
-			@JoinColumn(name="idAtividade")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="idInspecao")
-			}
-		)
-	private List<Inspecao> inspecaos1;
+//	@ManyToMany
+//	@JoinTable(
+//		name="Inspecao_Atividade_Apurada"
+//		, joinColumns={
+//			@JoinColumn(name="idAtividade")
+//			}
+//		, inverseJoinColumns={
+//			@JoinColumn(name="idInspecao")
+//			}
+//		)
+//	private List<Inspecao> inspecao_Atividade_Apurada;
 
 	//bi-directional many-to-many association to Inspecao
-	@ManyToMany
-	@JoinTable(
-		name="Inspecao_Atividade_Informada"
-		, joinColumns={
-			@JoinColumn(name="idAtividade")
-			}
-		, inverseJoinColumns={
-			@JoinColumn(name="idInspecao")
-			}
-		)
-	private List<Inspecao> inspecaos2;
+//	@ManyToMany
+//	@JoinTable(
+//		name="Inspecao_Atividade_Informada"
+//		, joinColumns={
+//			@JoinColumn(name="idAtividade")
+//			}
+//		, inverseJoinColumns={
+//			@JoinColumn(name="idInspecao")
+//			}
+//		)
+//	private List<Inspecao> inspecao_Atividade_Informada;
 
 	public Atividade() {
 	}
@@ -65,20 +65,20 @@ public class Atividade implements Serializable {
 		this.descAtividade = descAtividade;
 	}
 
-	public List<Inspecao> getInspecaos1() {
-		return this.inspecaos1;
-	}
+//	public List<Inspecao> getInspecao_Atividade_Apurada() {
+//		return this.inspecao_Atividade_Apurada;
+//	}
 
-	public void setInspecaos1(List<Inspecao> inspecaos1) {
-		this.inspecaos1 = inspecaos1;
-	}
+//	public void setInspecao_Atividade_Apurada(List<Inspecao> inspecao_Atividade_Apurada) {
+//		this.inspecao_Atividade_Apurada = inspecao_Atividade_Apurada;
+//	}
 
-	public List<Inspecao> getInspecaos2() {
-		return this.inspecaos2;
-	}
+//	public List<Inspecao> getInspecao_Atividade_Informada() {
+//		return this.inspecao_Atividade_Informada;
+//	}
 
-	public void setInspecaos2(List<Inspecao> inspecaos2) {
-		this.inspecaos2 = inspecaos2;
-	}
+//	public void setInspecao_Atividade_Informada(List<Inspecao> inspecao_Atividade_Informada) {
+//		this.inspecao_Atividade_Informada = inspecao_Atividade_Informada;
+//	}
 
 }

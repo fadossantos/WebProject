@@ -16,7 +16,7 @@ public class Cliente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int idCliente;
+	private long idCliente;
 
 	private String nomeCliente;
 
@@ -55,11 +55,11 @@ public class Cliente implements Serializable {
 	public Cliente() {
 	}
 
-	public int getIdCliente() {
+	public long getIdCliente() {
 		return this.idCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
+	public void setIdCliente(long idCliente) {
 		this.idCliente = idCliente;
 	}
 
