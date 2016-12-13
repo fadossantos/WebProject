@@ -14,7 +14,7 @@
 			th:onclick="'executaAjaxGet(\'/data/cidade/remover/'+ ${listValue.idCidade} + '\',\'listaCidades\',\'\',\'\');'"><span
 				class="btn-label"><i class="fa fa-check"></i></span>Remover</a></td>
 		<td><a class="btn btn-primary"
-			th:onclick="'setaDadosModal(\'' + ${listValue.idCidade} + '\');'">
+			th:onclick="'exibeModalEditaCidade(\'' + ${listValue.idCidade} + '\');'">
 
 				<span class="btn-label"><i class="fa fa-check"></i></span>Editar
 		</a></td>

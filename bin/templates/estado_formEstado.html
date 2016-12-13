@@ -1,4 +1,4 @@
-<form id = "formEstado" action="/data/estado.html" th:action="@{/data/estado.html}"
+<form id = "formEstado" action="/data/estado" th:action="@{/data/estado}"
 	th:object="${formEstado}" method="post" target="listaEstados">
 	<table>
 	<tr>
@@ -14,7 +14,7 @@
 
 		<tr>
 			<td colspan="2"><a class="btn btn-primary"
-			th:onclick="'executaAjaxPost(\'listaEstados\',document.getElementById(\'formEstado\'),\'\',\'\');'"><span
+			th:onclick="'executaAjaxPost(\'listaEstados\',$(this).closest(\'form\')[0],\'\',\'\');'"><span
 				class="btn-label"><i class="fa fa-check"></i></span>Salvar</a></td>
 		</tr>
 		<tr>

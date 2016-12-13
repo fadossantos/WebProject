@@ -27,13 +27,14 @@ public class WebProjectApplication extends SpringBootServletInitializer {
 		return application.sources(WebProjectApplication.class);
 	}
 
-	@Bean
+/*	@Bean
 	public Filter characterEncodingFilter() {
 		CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
 		characterEncodingFilter.setEncoding("UTF-8");
 		characterEncodingFilter.setForceEncoding(true);
 		return characterEncodingFilter;
 	}
+	*/
 }
 
 
